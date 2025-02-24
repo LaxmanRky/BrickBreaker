@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5b0465b7705ca448948acd2a147c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
 --- !u!1 &324174080
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,8 +562,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1e9840157275744b5ea74c97818c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 3
-  colors: []
 --- !u!61 &324174084
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -789,8 +787,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1e9840157275744b5ea74c97818c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 2
-  colors: []
 --- !u!61 &408377281
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -938,8 +934,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1e9840157275744b5ea74c97818c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 2
-  colors: []
 --- !u!61 &849511559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1087,8 +1081,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1e9840157275744b5ea74c97818c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 2
-  colors: []
 --- !u!61 &851198198
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1314,8 +1306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1e9840157275744b5ea74c97818c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 2
-  colors: []
 --- !u!61 &897538394
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1463,8 +1453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1e9840157275744b5ea74c97818c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 2
-  colors: []
 --- !u!61 &1056397952
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1612,8 +1600,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1e9840157275744b5ea74c97818c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 2
-  colors: []
 --- !u!61 &1470961676
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1976,8 +1962,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1e9840157275744b5ea74c97818c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 1
-  colors: []
 --- !u!61 &1923074822
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2125,8 +2109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1e9840157275744b5ea74c97818c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 3
-  colors: []
 --- !u!61 &1964919620
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,57 +1,61 @@
 using UnityEngine;
 
-public class Brick : MonoBehaviour
+public class BrickHealth : MonoBehaviour
 {
-    [Header("Brick Settings")]
-    [Tooltip("Set hit points: 1 (White), 2 (Green), 3 (Red)")]
-    public int hitPoints = 1;
-
-    [Tooltip("Assign colors in order: White, Green, Red")]
-    public Color[] colors;  // [0] = White, [1] = Green, [2] = Red
-
-    private SpriteRenderer sr;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        Debug.Log($"Initial brick color: {spriteRenderer.color}");
+    }
 
-        if (sr == null)
-        {
-            Debug.LogError("No SpriteRenderer found on Brick!");
-            return;
-        }
+    bool IsRedBrick(Color color)
+    {
+        return color.r > 0.9f && color.g < 0.2f && color.b < 0.2f;
+    }
 
-        UpdateColor();
+    bool IsGreenBrick(Color color)
+    {
+        // The green bricks in your game have RGB values around (0.118, 0.533, 0.000)
+        return color.g > 0.5f && color.r < 0.2f && color.b < 0.2f;
+    }
+
+    bool IsWhiteBrick(Color color)
+    {
+        return color.r > 0.9f && color.g > 0.9f && color.b > 0.9f;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ball"))
+        // Check if the colliding object has a BallMovement component
+        if (collision.gameObject.GetComponent<BallMovement>() != null)
         {
-            hitPoints--;
-
-            if (hitPoints <= 0)
+            Color currentColor = spriteRenderer.color;
+            Debug.Log($"Ball hit brick! Current color: {currentColor}");
+            
+            if (IsRedBrick(currentColor))
             {
-                Destroy(gameObject);  // Destroy the brick when hit points reach 0
+                // Red brick turns green
+                spriteRenderer.color = new Color(0.118f, 0.533f, 0f); // Set to exact green color
+                Debug.Log("Red brick turned green");
+            }
+            else if (IsGreenBrick(currentColor))
+            {
+                // Green brick turns white
+                spriteRenderer.color = Color.white;
+                Debug.Log("Green brick turned white");
+            }
+            else if (IsWhiteBrick(currentColor))
+            {
+                // White brick vanishes
+                Debug.Log("White brick destroyed");
+                Destroy(gameObject);
             }
             else
             {
-                UpdateColor();  // Change to the next color based on hitPoints
+                Debug.Log($"Unknown brick color: {currentColor}");
             }
-        }
-    }
-
-    void UpdateColor()
-    {
-        // Ensure the colors array has enough colors
-        if (colors != null && colors.Length >= 3)
-        {
-            // Use hitPoints to determine color: 3 -> Red, 2 -> Green, 1 -> White
-            sr.color = colors[hitPoints - 1];
-        }
-        else
-        {
-            Debug.LogWarning("Colors array is missing or incomplete.");
         }
     }
 }
