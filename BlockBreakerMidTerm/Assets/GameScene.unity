@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 247772541}
   - component: {fileID: 247772540}
   m_Layer: 0
-  m_Name: Square
+  m_Name: KillBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,6 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 130443748}
+  gameOver: {fileID: 8300000, guid: 77c7b703fae8a834bb12c292b6b3dd70, type: 3}
 --- !u!61 &247772541
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -711,6 +712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalBricks: 0
+  brickDestroyed: {fileID: 8300000, guid: c7a42e1e5894dac4fa78e23f60ce03e7, type: 3}
 --- !u!61 &324174084
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -937,6 +939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalBricks: 0
+  brickDestroyed: {fileID: 8300000, guid: c7a42e1e5894dac4fa78e23f60ce03e7, type: 3}
 --- !u!61 &408377281
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1085,6 +1088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalBricks: 0
+  brickDestroyed: {fileID: 8300000, guid: c7a42e1e5894dac4fa78e23f60ce03e7, type: 3}
 --- !u!61 &849511559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1233,6 +1237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalBricks: 0
+  brickDestroyed: {fileID: 8300000, guid: c7a42e1e5894dac4fa78e23f60ce03e7, type: 3}
 --- !u!61 &851198198
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1459,6 +1464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalBricks: 0
+  brickDestroyed: {fileID: 8300000, guid: c7a42e1e5894dac4fa78e23f60ce03e7, type: 3}
 --- !u!61 &897538394
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1607,6 +1613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalBricks: 0
+  brickDestroyed: {fileID: 8300000, guid: c7a42e1e5894dac4fa78e23f60ce03e7, type: 3}
 --- !u!61 &1056397952
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1755,6 +1762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalBricks: 0
+  brickDestroyed: {fileID: 8300000, guid: c7a42e1e5894dac4fa78e23f60ce03e7, type: 3}
 --- !u!61 &1470961676
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2118,6 +2126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalBricks: 0
+  brickDestroyed: {fileID: 8300000, guid: c7a42e1e5894dac4fa78e23f60ce03e7, type: 3}
 --- !u!61 &1923074822
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2266,6 +2275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalBricks: 0
+  brickDestroyed: {fileID: 8300000, guid: c7a42e1e5894dac4fa78e23f60ce03e7, type: 3}
 --- !u!61 &1964919620
 BoxCollider2D:
   m_ObjectHideFlags: 0

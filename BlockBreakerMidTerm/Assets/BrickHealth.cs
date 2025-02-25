@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 public class BrickHealth : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    public int totalBricks;
+    private int totalBricks;
 
+    public AudioClip brickDestroyed;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -60,6 +61,8 @@ public class BrickHealth : MonoBehaviour
                 {
                     SceneManager.LoadScene("GameOver");
                 }
+
+                AudioSource.PlayClipAtPoint(brickDestroyed, transform.position);
                 Destroy(gameObject);
             }
             else
