@@ -5,10 +5,10 @@ public class Retry : MonoBehaviour
 {
      public AudioClip gameOver;
 
-
     void Start()
     {
-       AudioSource.PlayClipAtPoint(gameOver, transform.position);
+
+       AudioSource.PlayClipAtPoint(gameOver, Vector2.zero);
 
     }
     public void RetryButton()
