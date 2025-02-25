@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Retry : MonoBehaviour
 {
-    void Start()
+    public void RetryButton()
     {
         SceneManager.LoadScene("GameScene");
 

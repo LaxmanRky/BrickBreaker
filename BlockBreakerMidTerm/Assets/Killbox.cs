@@ -9,7 +9,7 @@ public class Killbox : MonoBehaviour
  {
      if (collision.CompareTag("Ball"))
      {
-         SceneManager.LoadScene("MainMenu");
+         SceneManager.LoadScene("GameOver");
      }
  }
 }
