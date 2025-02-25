@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Video;
 
 public class MainMenu : MonoBehaviour
 {
@@ -10,6 +9,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.5f; 
         audioSource.Play();
 
     }
