@@ -16,8 +16,9 @@ public class BallMovement : MonoBehaviour
 
     void LaunchBall()
     {
+        // Start the ball with a random direction but keep it upwards initially
         Vector2 initialDirection = new Vector2(Random.Range(-1f, 1f), 1).normalized;
-        rb.linearVelocity = initialDirection * speed;
+        rb.velocity = initialDirection * speed;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -25,38 +26,39 @@ public class BallMovement : MonoBehaviour
         // Play collision sound
         AudioSource.PlayClipAtPoint(ballCollide, Vector3.zero);
 
-        // Check if colliding with Paddle
+        // Check if the ball collides with the paddle
         PaddleMovement paddle = collision.gameObject.GetComponent<PaddleMovement>();
         if (paddle != null)
         {
-            // Reflect based on hit position on the paddle
+            // Reflect the ball's velocity based on where it hits the paddle
             float x = (transform.position.x - collision.transform.position.x) * 2f;
-            rb.linearVelocity = new Vector2(x, 1).normalized * speed;
+            rb.velocity = new Vector2(x, 1).normalized * speed;
         }
         else
         {
-            // Add small random tweak to prevent infinite loops
-            Vector2 newVelocity = rb.linearVelocity;
-            float tweak = Random.Range(-0.1f, 0.1f);
+            // Add a small random tweak to prevent infinite loops
+            Vector2 newVelocity = rb.velocity;
+            float tweak = Random.Range(-0.1f, 0.1f); // Small random angle tweak
             newVelocity.x += tweak;
             newVelocity = newVelocity.normalized * speed;
-            rb.linearVelocity = newVelocity;
+            rb.velocity = newVelocity;
 
-            // Apply minimum bounce angle correction
+            // Ensure the ball maintains a minimum bounce angle
             MaintainMinimumBounceAngle();
         }
     }
 
     void MaintainMinimumBounceAngle()
     {
-        float angle = Vector2.Angle(rb.linearVelocity, Vector2.up);
+        // Get the angle of the current ball trajectory
+        float angle = Vector2.Angle(rb.velocity, Vector2.up);
 
-        // Check if the angle is too vertical or too horizontal
+        // If the ball is too vertical or too horizontal, adjust its angle
         if (angle < minBounceAngle || angle > (180 - minBounceAngle))
         {
-            // Apply slight adjustment to keep the ball moving
-            Vector2 adjustedVelocity = Quaternion.Euler(0, 0, minBounceAngle) * rb.linearVelocity;
-            rb.linearVelocity = adjustedVelocity.normalized * speed;
+            // Apply a slight angle adjustment to avoid the ball going flat or too steep
+            Vector2 adjustedVelocity = Quaternion.Euler(0, 0, minBounceAngle) * rb.velocity;
+            rb.velocity = adjustedVelocity.normalized * speed;
         }
     }
 }
