@@ -1,13 +1,17 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BrickHealth : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
+    public int totalBricks;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         Debug.Log($"Initial brick color: {spriteRenderer.color}");
+
+        totalBricks = GameObject.FindGameObjectsWithTag("Brick").Length;
     }
 
     bool IsRedBrick(Color color)
@@ -50,6 +54,12 @@ public class BrickHealth : MonoBehaviour
             {
                 // White brick vanishes
                 Debug.Log("White brick destroyed");
+                totalBricks --;
+
+                if(totalBricks <= 0)
+                {
+                    SceneManager.LoadScene("GameOver");
+                }
                 Destroy(gameObject);
             }
             else
